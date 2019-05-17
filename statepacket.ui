@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>StatePacket</class>
+ <widget class="QDialog" name="StatePacket">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>301</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/*QComboBox*/
+
+QComboBox {
+border: 1px solid rgb(111, 156, 207);
+border-radius: 3px;
+padding: 1px 18px 1px 3px;
+min-width: 9em;
+max-width: 9em;
+}
+QComboBox::drop-down {
+subcontrol-origin: padding;
+subcontrol-position: top right;
+width: 15px;
+border-left-width: 1px;
+border-left-color: darkgray;
+border-left-style: solid;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+}
+QComboBox QAbstractItemView {
+border: 2px solid darkgray;
+selection-background-color: lightgray;
+}
+
+/*QLineEdit*/
+
+QLineEdit{
+min-width:50px;
+max-width:50px;
+border: 2px solid gray;
+border-radius: 10px;
+padding: 0 8px;
+background: yellow;
+selection-background-color: darkgray;
+}
+
+/*QPushButton*/
+
+QPushButton{
+min-width:75px;
+max-width:75px;
+min-height:20px;
+border:1px solid black;
+border-radius:5px;
+}
+QPushButton:hover{
+background-color: #333333;
+border-color: #444444;
+color:rgb(255,255,255);
+}
+QPushButton:pressed{
+background-color: #111111;
+border-color: #333333;
+color: yellow;
+}
+
+/*QTabWidget*/
+QTabWidget::tab-bar {
+alignment: left;
+}
+QTabWidget::pane {
+border-top: 2px solid #C2C7CB;
+}
+QTabBar::tab:selected {
+margin-top:0px;
+border-color: #9B9B9B;
+border-bottom-color: #C2C7CB;
+}
+QTabBar::tab:!selected {
+margin-top: 2px;
+}
+QTabBar::tab {
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+border: 2px solid #C4C4C3;
+border-bottom-color: #C2C7CB;
+border-top-left-radius: 4px;
+border-top-right-radius: 4px;
+min-width: 8ex;
+padding: 2px;
+}
+
+/*QWidget*/
+QWidget{
+background-color:#F5F5F5;
+}
+
+/*QGroupBox*/
+QGroupBox {
+border: 2px solid gray;
+border-radius: 5px;
+margin-top: 1ex;
+}
+QGroupBox::title {
+subcontrol-origin: margin;
+subcontrol-position: top center;
+padding: 0 3px;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #FF0ECE, stop: 1 #FFFFFF);
+}
+
+/*QCheckBox*/
+
+QCheckBox::indicator{
+width: 13px;
+height: 13px;
+background-color: #00FF00;
+border: 1px solid #000000;
+border-radius:4px;
+}
+QCheckBox::indicator::checked{
+background-color: qradialgradient(cx:0.5, cy:0.5, fx:0.25, fy:0.15,
+radius:0.3, stop:0 #FF0000, stop:1 #FFFFFF);
+}
+
+/*QtextEdit*/
+
+QTextEdit{
+border: 1px solid gray;
+border-radius: 5px;
+}
+QTextEdit#textEdit{
+background-color: rgb(235, 255, 203);
+}
+QTextEdit#textEdit_2{
+background-color: rgb(194, 255, 194);
+}
+QTextEdit#textEdit_3{
+background-color: rgb(170, 255, 127);
+}
+QScrollBar:vertical{
+width:8px;
+background:rgba(0,0,0,0%);
+margin:0px,0px,0px,0px;
+padding-top:9px;
+padding-bottom:9px;
+}
+QScrollBar::handle:vertical{
+width:8px;
+background:rgba(0,0,0,25%);
+border-radius:4px;
+min-height:20;
+}
+QScrollBar::handle:vertical:hover{
+width:8px;
+background:rgba(0,0,0,50%);
+border-radius:4px;
+min-height:20;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>采集模块类型：</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1" colspan="2">
+      <widget class="QComboBox" name="comboBox">
+       <item>
+        <property name="text">
+         <string>1-车底轨中采集箱2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2-车底轨中采集箱1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>3-车底轨外采集箱</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>4-走行部侧面采集箱</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>5-车体侧面采集箱</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>6-车顶采集模块</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>采集模块工作状态：</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" colspan="2">
+      <widget class="QComboBox" name="comboBox_2">
+       <item>
+        <property name="text">
+         <string>1-维护状态</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2-休眠状态</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>3-激活状态</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>4-拍摄状态</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>5-错误状态</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>采集模块编号：</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1" colspan="2">
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="text">
+        <string>1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>采集模块工作模式：</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1" colspan="2">
+      <widget class="QComboBox" name="comboBox_3">
+       <item>
+        <property name="text">
+         <string>1-运行模式</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2-维护模式</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>防护门状态：</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>水位报警：</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="label_12">
+       <property name="text">
+        <string>箱体散热风扇状态：</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1" colspan="2">
+      <widget class="QComboBox" name="comboBox_9">
+       <item>
+        <property name="text">
+         <string>0-模块不存在此部件</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1-部件打开</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2-部件关闭</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>3-部件故障</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="5" column="1" colspan="2">
+      <widget class="QLineEdit" name="lineEdit_2">
+       <property name="text">
+        <string>1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1" colspan="2">
+      <widget class="QComboBox" name="comboBox_10">
+       <item>
+        <property name="text">
+         <string>0-模块不存在此部件</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1-部件打开</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2-部件关闭</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>3-部件故障</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_13">
+       <property name="text">
+        <string>加热器故障状态（预留）：</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1" colspan="2">
+      <widget class="QComboBox" name="comboBox_11">
+       <item>
+        <property name="text">
+         <string>0-模块不存在此部件</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1-部件打开</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2-部件关闭</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>3-部件故障</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>2</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>相机1</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_19">
+           <property name="text">
+            <string>相机状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="comboBox_17">
+           <item>
+            <property name="text">
+             <string>0-模块不存在此部件</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1-部件打开</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2-部件关闭</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3-部件故障</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_20">
+           <property name="text">
+            <string>光源状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="comboBox_18">
+           <item>
+            <property name="text">
+             <string>0-模块不存在此部件</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1-部件打开</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2-部件关闭</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3-部件故障</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_21">
+           <property name="text">
+            <string>除尘风扇状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="comboBox_19">
+           <item>
+            <property name="text">
+             <string>0-模块不存在此部件</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1-部件打开</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2-部件关闭</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3-部件故障</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_22">
+           <property name="text">
+            <string>散热风扇1状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QComboBox" name="comboBox_20">
+           <item>
+            <property name="text">
+             <string>0-模块不存在此部件</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1-部件打开</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2-部件关闭</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3-部件故障</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_23">
+           <property name="text">
+            <string>散热风扇2状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QComboBox" name="comboBox_21">
+           <item>
+            <property name="text">
+             <string>0-模块不存在此部件</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1-部件打开</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2-部件关闭</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3-部件故障</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>相机2</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_14">
+           <property name="text">
+            <string>相机状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="comboBox_12">
+           <item>
+            <property name="text">
+             <string>0-模块不存在此部件</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1-部件打开</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2-部件关闭</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3-部件故障</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_15">
+           <property name="text">
+            <string>光源状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="comboBox_13">
+           <item>
+            <property name="text">
+             <string>0-模块不存在此部件</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1-部件打开</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2-部件关闭</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3-部件故障</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_16">
+           <property name="text">
+            <string>除尘风扇状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="comboBox_14">
+           <item>
+            <property name="text">
+             <string>0-模块不存在此部件</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1-部件打开</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2-部件关闭</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3-部件故障</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_17">
+           <property name="text">
+            <string>散热风扇1状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QComboBox" name="comboBox_15">
+           <item>
+            <property name="text">
+             <string>0-模块不存在此部件</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1-部件打开</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2-部件关闭</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3-部件故障</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_18">
+           <property name="text">
+            <string>散热风扇2状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QComboBox" name="comboBox_16">
+           <item>
+            <property name="text">
+             <string>0-模块不存在此部件</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1-部件打开</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2-部件关闭</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3-部件故障</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>相机3</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>相机状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="comboBox_4">
+           <item>
+            <property name="text">
+             <string>0-模块不存在此部件</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1-部件打开</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2-部件关闭</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3-部件故障</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>光源状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="comboBox_5">
+           <item>
+            <property name="text">
+             <string>0-模块不存在此部件</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1-部件打开</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2-部件关闭</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3-部件故障</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>除尘风扇状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="comboBox_6">
+           <item>
+            <property name="text">
+             <string>0-模块不存在此部件</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1-部件打开</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2-部件关闭</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3-部件故障</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>散热风扇1状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QComboBox" name="comboBox_7">
+           <item>
+            <property name="text">
+             <string>0-模块不存在此部件</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1-部件打开</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2-部件关闭</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3-部件故障</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>散热风扇2状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QComboBox" name="comboBox_8">
+           <item>
+            <property name="text">
+             <string>0-模块不存在此部件</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1-部件打开</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2-部件关闭</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3-部件故障</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1227</width>
+    <height>687</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>车体外观_嵌入式CAN陪测软件_V1.3</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/*QComboBox*/
+
+QComboBox {
+border: 1px solid rgb(111, 156, 207);
+border-radius: 3px;
+padding: 1px 18px 1px 3px;
+min-width: 9em;
+max-width:9em;
+}
+QComboBox::drop-down {
+subcontrol-origin: padding;
+subcontrol-position: top right;
+width: 15px;
+border-left-width: 1px;
+border-left-color: darkgray;
+border-left-style: solid;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+}
+QComboBox QAbstractItemView {
+border: 2px solid darkgray;
+selection-background-color: lightgray;
+}
+
+/*QLineEdit*/
+
+QLineEdit{
+min-width:50px;
+max-width:50px;
+border: 2px solid gray;
+border-radius: 10px;
+padding: 0 8px;
+background: yellow;
+selection-background-color: darkgray;
+}
+
+/*QPushButton*/
+
+QPushButton{
+min-width:75px;
+max-width:75px;
+min-height:20px;
+border:1px solid black;
+border-radius:5px;
+}
+QPushButton:hover{
+background-color: #333333;
+border-color: #444444;
+color:rgb(255,255,255);
+}
+QPushButton:pressed{
+background-color: #111111;
+border-color: #333333;
+color: yellow;
+}
+
+/*QTabWidget*/
+QTabWidget::tab-bar {
+alignment: left;
+}
+QTabWidget::pane {
+border-top: 2px solid #C2C7CB;
+}
+QTabBar::tab:selected {
+margin-top:0px;
+border-color: #9B9B9B;
+border-bottom-color: #C2C7CB;
+}
+QTabBar::tab:!selected {
+margin-top: 2px;
+}
+QTabBar::tab {
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+border: 2px solid #C4C4C3;
+border-bottom-color: #C2C7CB;
+border-top-left-radius: 4px;
+border-top-right-radius: 4px;
+min-width: 8ex;
+padding: 2px;
+}
+
+/*QWidget*/
+QWidget{
+background-color:#F5F5F5;
+}
+
+/*QGroupBox*/
+QGroupBox {
+border: 2px solid gray;
+border-radius: 5px;
+margin-top: 1ex;
+}
+QGroupBox::title {
+subcontrol-origin: margin;
+subcontrol-position: top center;
+padding: 0 3px;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #FF0ECE, stop: 1 #FFFFFF);
+}
+
+/*QCheckBox*/
+
+QCheckBox::indicator{
+width: 13px;
+height: 13px;
+background-color: #00FF00;
+border: 1px solid #000000;
+border-radius:4px;
+}
+QCheckBox::indicator::checked{
+background-color: qradialgradient(cx:0.5, cy:0.5, fx:0.25, fy:0.15,
+radius:0.3, stop:0 #FF0000, stop:1 #FFFFFF);
+}</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,1">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>设备类型：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox">
+          <item>
+           <property name="text">
+            <string>USBCAN2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>USBCAN-2E-U</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>设备索引号：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit">
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>设备通道号：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox_2">
+          <item>
+           <property name="text">
+            <string>通道0</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>通道1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>双通道</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkBox">
+          <property name="text">
+           <string>canID自增</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string>连接CAN</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="text">
+           <string>关闭CAN</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>未连接</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>CAN1构造发送</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QPushButton" name="pushButton_6">
+            <property name="text">
+             <string>添加帧</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_7">
+            <property name="text">
+             <string>删除帧</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_8">
+            <property name="text">
+             <string>循环发送</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_9">
+            <property name="text">
+             <string>停止循环</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_3">
+            <property name="text">
+             <string>单次发送</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_10">
+            <property name="text">
+             <string>清空发送结果</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_9">
+          <item>
+           <widget class="QLabel" name="label_11">
+            <property name="text">
+             <string>发送列表</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="tableWidget_2">
+            <column>
+             <property name="text">
+              <string>报文类型</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>ID</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>数据</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>源地址</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>目的地址</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>间隔时常</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>自发自收</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>单次发送次数</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>含义</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>发送结果</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkBox_5">
+            <property name="text">
+             <string>显示</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="plainTextEdit_2"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>CAN1接收解析</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_7" stretch="0">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,0,0,0,0,0,1">
+            <item>
+             <widget class="QCheckBox" name="checkBox_4">
+              <property name="text">
+               <string>显示</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>筛选报文类型</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comboBox_3">
+              <item>
+               <property name="text">
+                <string>信号采集板采集报文</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>主控箱控制报文</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>状态报文</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>状态监测报文</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>板卡信息报文</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>所有</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_8">
+              <property name="text">
+               <string>筛选源地址</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comboBox_4">
+              <item>
+               <property name="text">
+                <string>1-主控板</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>2-采集板</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>3-沉箱控制板</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>4-侧箱控制板</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>5-车顶控制板</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>6-广播</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>所有</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_11">
+              <property name="text">
+               <string>清空接收结果</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>时间  报文类型  ID 数据  源地址-&gt;目的地址
+解析内容</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="plainTextEdit"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>CAN2构造发送</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <item>
+           <widget class="QPushButton" name="pushButton_12">
+            <property name="text">
+             <string>添加帧</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_13">
+            <property name="text">
+             <string>删除帧</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_14">
+            <property name="text">
+             <string>开始循环</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_15">
+            <property name="text">
+             <string>停止循环</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_4">
+            <property name="text">
+             <string>单次发送</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_16">
+            <property name="text">
+             <string>清空发送结果</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_10">
+          <item>
+           <widget class="QLabel" name="label_13">
+            <property name="text">
+             <string>发送列表</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="tableWidget_3">
+            <column>
+             <property name="text">
+              <string>报文类型</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>ID</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>数据</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>源地址</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>目的地址</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>间隔时长</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>自发自收</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>单次发送次数</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>含义</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QLabel" name="label_12">
+            <property name="text">
+             <string>发送结果</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkBox_6">
+            <property name="text">
+             <string>显示</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="plainTextEdit_3"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_5">
+       <attribute name="title">
+        <string>CAN2接收解析</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_10" stretch="0,0,0,0,0,0,1">
+          <item>
+           <widget class="QCheckBox" name="checkBox_7">
+            <property name="text">
+             <string>显示</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_14">
+            <property name="text">
+             <string>筛选报文类型</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_5">
+            <item>
+             <property name="text">
+              <string>信号采集板采集报文</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>主控箱控制报文</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>状态报文</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>状态监测报文</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>板卡信息报文</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>所有</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_15">
+            <property name="text">
+             <string>筛选源地址</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_6">
+            <item>
+             <property name="text">
+              <string>1-主控板</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2-采集板</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3-沉箱控制板</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4-侧箱控制板</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5-车顶控制板</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>6-广播</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>所有</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_17">
+            <property name="text">
+             <string>清空接收结果</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_8">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>时间  报文类型  ID 数据  源地址-&gt;目的地址
+解析内容</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="plainTextEdit_4"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1227</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
